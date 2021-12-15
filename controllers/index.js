@@ -52,13 +52,16 @@ const controller = {
             autor, ano_lancamento, 
             estoque
         },{
-            where: {
-                id
-            }
-
-            
+            where: { id }        
         })
 
+        if(livroUp == 1) {
+            res.status(203).json({mesagem: 'alteração bem sucedida!'})
+        } else {
+            res.status(202).json({mesagem: 'alteração já foi feita'})
+        }
+
+        
         
     return  res.json(livroUp)
     },
